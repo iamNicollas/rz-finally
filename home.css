@@ -31,7 +31,7 @@
   }
   
   nav #logo {
-    background: url(../img/logo.png) no-repeat;
+    background: url(img/logo.png) no-repeat;
     background-size: contain;
     object-fit: cover;
     height: 50px;
@@ -144,7 +144,7 @@ p {
   display: inline-block;
   width: 45px;
   height: 45px;
-  background: url(../img/WhatsApp.png) no-repeat;
+  background: url(img/WhatsApp.png) no-repeat;
   background-size: contain;
   object-fit: cover;
   margin-right: 5px;
@@ -462,7 +462,7 @@ b{
   display: inline-block;
   width: 45px;
   height: 45px;
-  background: url(../img/WhatsApp.png) no-repeat;
+  background: url(img/WhatsApp.png) no-repeat;
   background-size: contain;
   object-fit: cover;
   margin-right: 5px;
