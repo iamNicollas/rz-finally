@@ -59,6 +59,10 @@
     -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: rgba(241, 220, 220, 0.984);
   }
+
+  .nav-list.active{
+    display: flex;
+  }
   
   .mobile-menu {
     display: none;
@@ -76,10 +80,11 @@
 /* ---CONTAINER HOME--- */
 #container-home {
   min-height: 450px;
-  height: auto;
-  width: inherit;
+  height: inherit;
+  width: auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
+  /* background-color: yellow; */
 }
 
 .content {
@@ -88,7 +93,6 @@
   flex-direction: row;
 }
 
-
 #container-descricao-empresa{
   width: 50%;
   height: max-content;
@@ -96,6 +100,7 @@
   padding-bottom:0px ;
   display: flex;
   flex-direction: column;
+  /* background-color: red; */
   
 }#container-descricao-empresa h1 {
   font-size: 33px;
@@ -270,18 +275,31 @@ p {
   color: #329b9b;
 }
 
+#fade{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
 .modal-card{
   z-index: -10;
-  position: absolute;
-  height: 419px;
-  width: 367px;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   transition: all 300ms ease-in-out;
   opacity: 0;
   padding: 15px;
-  display: flex;
+  display: flex;  
   flex-direction: column;
   justify-content: space-between;
   margin-top: -50px;
@@ -295,7 +313,6 @@ p {
   text-align: center;
   padding-top: 15px;
   font-size: 18px;
-  
 }
 
 .modal-card p{
@@ -318,7 +335,6 @@ button img{
   margin-right: 10px;
 }
 
-
 .principal-img {
   width: 100%;
   height: auto;
@@ -333,7 +349,6 @@ button img{
   padding: 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: #0D3D3D;
-  /* width:100%; */
 }
 
 .circle-about {
@@ -476,7 +491,6 @@ b{
   min-height: 704;
   height: auto;
   width: inherit;
-  /* margin: auto; */
   background-color: #0D3D3D;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 25px;
@@ -513,7 +527,6 @@ b{
   word-break: break-word;
 }
 
-
 .content-square{
   display: flex;
   gap: 15px;
@@ -544,7 +557,6 @@ b{
   box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
   margin-left: 10px;
-  /* overflow: hidden; */
   max-width: 350px;
   margin-top: 20px;
 }
@@ -767,9 +779,6 @@ footer {
   margin-left: 20px;
 }
 
-
-
-
 /* TELA RESPONSIVA */
   @keyframes navLinkFade {
     from {
@@ -808,6 +817,7 @@ footer {
       right: 0;
       width: 50vw;
       height: 92vh;
+      display: none;
       background: var(--primary);
       flex-direction: column;
       align-items: center;
@@ -831,7 +841,7 @@ footer {
       flex-direction: column;
     }
     #container-descricao-empresa{
-      width: 100%;
+      width: auto;
       padding: 20px;
     }
     #container-descricao-empresa h1{
@@ -902,14 +912,28 @@ footer {
     nav #logo {
       margin-left: -70px;
     }
-
-    .text-about p{
-      width: auto;
-      margin-right:25px;
+    .content-about{
+      flex-direction: column;
+      margin-top: 100px;
+      height: max-content;
+    }
+     .content-about img{
+      width: 90%;
+      margin: 0;
+      margin-bottom: -460px;
+      z-index: 1;
     }
 
-    .content-about img{
-      max-height: 393px;
+    .text-about h1{
+      margin:auto;
+      margin-bottom: 430px;
+    } 
+
+    .text-about p{
+      margin: 0;
+      margin-right: 30px;
+      margin-bottom: 3px;
+      width: 90%;
     }
 
     .content-free{
@@ -921,7 +945,6 @@ footer {
       margin: auto;
       width: 120px;
       margin-bottom: -360px;
-      /* z-index: 1; */
       margin-top: 150px;
     }
 
@@ -955,7 +978,20 @@ footer {
 
   }
 
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 607px) {
+    .text-about h1{
+      margin-top: 60px;
+    } 
+  }
+
+  @media screen and (max-width: 510px) {
+    .text-about h1{
+      margin-bottom: 350px;
+      margin-top: 90px;
+    } 
+  }
+
+  @media screen and (max-width: 431px) {
 
     .card-container{
       margin-left: 0;
@@ -982,6 +1018,7 @@ footer {
     .text-about h1{
       /* background-color: red; */
       margin-bottom: 300px;
+      margin-top: 10px;
     } 
 
     .text-about p{
@@ -997,5 +1034,14 @@ footer {
     .square{
       margin-left: 0;
       margin-bottom: 10px;
+    }
+
+    .modal-card{
+      z-index: -10;
+      position: fixed;
+      top: 15%;
+      left: 5%;
+      height: 50%;
+      width: 85%;
     }
   }
